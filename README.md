@@ -50,6 +50,8 @@ mods-manifest.txt — список модов с SHA-256 для проверки
 - `natives/`, `.sable/`, `downloads/`, `server-resource-packs/` — кэш и нативные библиотеки
 - `servers.dat`, `usercache.json`, `usernamecache.json`, `TLauncherAdditional.json` — аккаунт и список серверов
 
+Дополнительно включён pre-commit хук (`.githooks/pre-commit`), который перед каждым коммитом вычищает `lastServer:` из `options.txt` — чтобы адрес сервера не утёк. После клонирования включить: `git config core.hooksPath .githooks`.
+
 ## Как восстановить сборку
 
 1. Установить Minecraft **1.21.1** и **NeoForge 21.1.264** в отдельный профиль.
