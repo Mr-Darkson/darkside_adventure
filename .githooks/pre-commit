@@ -1,0 +1,18 @@
+#!/bin/sh
+# ------------------------------------------------------------
+#  Чистим "личное" из отслеживаемых файлов перед каждым коммитом.
+#  Репозиторий публичный, поэтому адреса серверов туда пускать нельзя.
+# ------------------------------------------------------------
+
+if git ls-files --error-unmatch options.txt >/dev/null 2>&1; then
+  before=$(git hash-object -- options.txt)
+  # lastServer:<ip:port> -> lastServer:
+  sed -i.bak 's/^lastServer:.*/lastServer:/' options.txt && rm -f options.txt.bak
+  after=$(git hash-object -- options.txt)
+  if [ "$before" != "$after" ]; then
+    git add -- options.txt
+    echo "pre-commit: из options.txt вычищен lastServer"
+  fi
+fi
+
+exit 0
