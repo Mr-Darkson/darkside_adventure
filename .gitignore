@@ -1,0 +1,66 @@
+# ============================================================
+#  Darkside Adventure (NeoForge) — .gitignore
+#  В репозиторий идёт только "исходник" сборки:
+#  моды, конфиги, ресурспаки, шейдеры, настройки.
+#  Всё личное (миры, карты, логи, кэш, аккаунт, сервера) — нет.
+# ============================================================
+
+# ---------- Миры и всё, что привязано к прохождению ----------
+/saves/
+/journeymap/
+/schematics/
+/backups/
+/screenshots/
+/replay_recordings/
+/local/
+*.dat_old
+
+# ---------- Логи, краши, дампы ----------
+/logs/
+/crash-reports/
+/.mixin.out/
+hs_err_pid*
+replay_pid*
+*.log
+*.log.gz
+
+# ---------- Кэш и нативные библиотеки (пересоздаются при запуске) ----------
+/natives/
+/.sable/
+/downloads/
+/server-resource-packs/
+/.cache/
+/blueprints/
+
+# ---------- Аккаунт, сеть, идентификация игрока ----------
+/servers.dat
+/servers.dat_old
+/usercache.json
+/usernamecache.json
+/launcher_profiles.json
+/launcher_accounts.json
+/TLauncherAdditional.json
+/ponders_watched.json
+/options.txt.lastServer
+
+# ---------- Клиент игры и мусор лаунчера ----------
+/Darkside Adventure (Neoforge).jar
+*.jar.bak
+*.bak
+*.tmp
+
+# ---------- Системный мусор ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================================
+#  ПЕРЕКЛЮЧАТЕЛЬ: хранить ли сами .jar модов в репозитории
+#
+#  Сейчас — ХРАНИМ (режим полного бэкапа сборки, ~126 МБ).
+#  Если захочется чистый репозиторий "только исходник"
+#  (моды ставятся по списку из mods-manifest.txt), раскомментируйте:
+#
+#  /mods/*.jar
+#
+# ============================================================

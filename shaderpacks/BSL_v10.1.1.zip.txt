@@ -1,0 +1,7 @@
+#Tue Oct 27 19:57:31 MSK 2026
+FXAA=false
+LIGHT_SHAFT=false
+SHADOW_COLOR=false
+TAA=false
+shadowDistance=192.0
+shadowMapResolution=1536
